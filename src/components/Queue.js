@@ -46,7 +46,7 @@ export default class Queue extends React.Component {
             maxWidth: "100%"
         }
         return(
-            <div style={{margin: '-0.75rem'}}>
+            <div>
                 <img style={imgStyle} src={row.Album.Cover} alt="Album Art"/>
             </div>
             )

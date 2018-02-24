@@ -13,7 +13,7 @@ export default class Search extends React.Component {
             fontSize: "10px",
             margin: "0",
         }
-        return(<div class ="text-primary"><p class="text-primary" style={medText}><strong>{row.title}</strong></p><p class="text-primary" style={smallText}>{row.artist}</p><p class="text-primary" style={smallText}>{row.album}</p></div>
+        return(<div class ="text-primary"><p style={medText}><strong>{row.title}</strong></p><p style={smallText}>{row.artist}</p><p style={smallText}>{row.album}</p></div>
             )
     }
 
@@ -29,13 +29,13 @@ export default class Search extends React.Component {
     }
     buttonFormatter(cell, row){
         return (
-             <div class ="text-primary text-center"><a href="#/bosemain/search" onClick={() => this.props.playSearchedSong(row.id)}><i class="fas fa-play" ></i></a></div>
+             <div class ="text-center"><a href="#/bosemain/search" onClick={() => this.props.playSearchedSong(row.id)}><i class="fas fa-play" ></i></a></div>
 
             )
     }
     addButtonFormatter(cell, row){
         return (
-             <div class ="text-primary text-center"><a href="#/bosemain/search" onClick={() => this.props.addToQueue(row.id)}><i class="fas fa-plus-circle" ></i></a></div>
+             <div class ="text-center"><a href="#/bosemain/search" onClick={() => this.props.addToQueue(row.id)}><i class="fas fa-plus-circle" ></i></a></div>
 
             )
     }
@@ -47,7 +47,7 @@ export default class Search extends React.Component {
 
         return(          
             <div class="col-md-6">
-    			<div class="card text-primary bg-secondary text-center">
+    			<div class="card bg-primary text-center">
     				<div class="card-header">
     					<strong>Search</strong>
     				</div>
