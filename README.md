@@ -16,5 +16,7 @@ SCREENSHOTS
 
 INSTRUCTIONS
 =====
+The project consists of two different servers. A back-end server written in Go and a front end server written in node/React.
+
 TODO
 
