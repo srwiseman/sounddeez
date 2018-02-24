@@ -16,7 +16,5 @@ SCREENSHOTS
 
 INSTRUCTIONS
 =====
-The project consists of two different servers. A back-end server written in Go and a front end server written in node/React.
-
-TODO
+The project consists of two different servers. A back-end server written in Go and a front end server written in node/React. The backend server handles all communication to the sound system and serves JSON to the front end server. The front end server pulls the JSON data from the backend server and displays it in a GUI using a React framework.
 
