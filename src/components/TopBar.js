@@ -20,7 +20,7 @@ export default class TopBar extends React.Component {
 
 	render(){
 		const smallText={
-  			fontSize: "12px",
+  			fontSize: "2vh",
   			margin: "0",
   		}
   		const imgStyle = {

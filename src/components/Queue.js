@@ -60,9 +60,9 @@ export default class Queue extends React.Component {
 
         return(          
             <div class="col-md">
-                <div class="card text-secondary bg-primary text-center">
+                <div class="card bg-primary text-center">
                     <div class="card-header">
-                        <strong>Queue</strong>
+                        <strong style={{color: "#cccccc"}}>Queue</strong>
                     </div>
                     <div class="card-body">
                         <BootstrapTable data={this.state.queue} striped hover headerStyle={{ display: 'none'}}>

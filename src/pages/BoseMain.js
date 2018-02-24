@@ -120,6 +120,9 @@ export default class BoseMain extends React.Component {
     		</div>
     		)
     }
+    handleStateChange (state) {
+    this.setState({menuOpen: state.isOpen})  
+  }
 
   render(){
   	const title = "Welcome Steve!";
@@ -134,7 +137,7 @@ export default class BoseMain extends React.Component {
     top: '3vh'
   },
   bmBurgerBars: {
-    background: '#373a47'
+    background: '#aaaaaa'
   },
   bmCrossButton: {
     height: '24px',
@@ -163,7 +166,8 @@ export default class BoseMain extends React.Component {
 
     return(
     	<div>
-    	         <Menu isOpen={this.state.menuOpen} width={ '250px' } styles={ styles }>
+    	         <Menu isOpen={this.state.menuOpen} width={ '250px' } styles={ styles } onStateChange={(state) => this.handleStateChange(state)}>
+               <h2> <i class="fas fa-headphones"></i>SoundDeez </h2>
     	          <a onClick={() => this.closeMenu()} id="about" className="menu-item button" href="/#/bosemain/search"><i class="fas fa-search"></i><span>Search</span></a>
     	           <a onClick={() => this.closeMenu()}  id="home" className="menu-item button" href="/#/bosemain/queue" style={{ display: "block"}}><i class="fas fa-list-ul"></i><span>Queue</span></a>
         		   
