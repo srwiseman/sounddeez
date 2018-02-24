@@ -1,5 +1,6 @@
 import React from 'react';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
+import FadeIn from 'react-fade-in';
 
 
 export default class Queue extends React.Component {
@@ -59,7 +60,8 @@ export default class Queue extends React.Component {
     }
 
         return(          
-            <div class="col-md">
+            <div class="col-md-6">
+            <FadeIn>
                 <div class="card bg-primary text-center">
                     <div class="card-header">
                         <strong style={{color: "#cccccc"}}>Queue</strong>
@@ -73,6 +75,7 @@ export default class Queue extends React.Component {
                         </BootstrapTable>
                     </div>
                 </div>
+                </FadeIn>
             </div>   
 
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
+import FadeIn from 'react-fade-in';
 
 
 export default class Search extends React.Component {
@@ -22,7 +23,7 @@ export default class Search extends React.Component {
             maxWidth: "100%"
         }
         return(
-            <div style={{margin: '-0.75rem'}}>
+            <div>
                 <img style={searchImgStyle} src={row.albumImage} alt="Album Art"/>
             </div>
             )
@@ -47,13 +48,14 @@ export default class Search extends React.Component {
 
         return(          
             <div class="col-md-6">
+            <FadeIn>
     			<div class="card bg-primary text-center">
     				<div class="card-header">
-    					<strong>Search</strong>
+    					<strong style={{color: "#cccccc"}}>Search</strong>
     				</div>
     				<div class="card-body">
     					<input class="form-control" value={this.props.searchValue} onChange={this.props.handleSearchChange} />
-    					<button class="btn" onClick={this.props.searchSongs}> Search </button>
+    					<button class="btn" onClick={this.props.searchSongs}> <i class="fas fa-search"></i> Search </button>
     					<BootstrapTable data={this.props.results} striped hover headerStyle={{ display: 'none'}} options={{noDataText: 'Search for a Song!'}}>
     						<TableHeaderColumn width="20%"dataField='albumImage' dataFormat={this.resultsFormatterImage.bind(this)}></TableHeaderColumn>
     						<TableHeaderColumn width="60%" isKey dataField='full' dataFormat={this.resultsFormatter.bind(this)}></TableHeaderColumn>
@@ -62,6 +64,7 @@ export default class Search extends React.Component {
     					</BootstrapTable>
     				</div>
     			</div>
+                </FadeIn>
     		</div>
 
 
