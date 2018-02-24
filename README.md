@@ -1,4 +1,5 @@
-#Intro
+INTRO
+=====
 
 ![screenshot](screenshots/search.png "Search"))
 ![screenshot](screenshots/queue.png "Queue"))
