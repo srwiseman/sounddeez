@@ -29,7 +29,7 @@ type Artist struct {
 type Album struct {
         Id int
         Title string
-        cover string
+        Cover string
 }
 
 type Song struct {

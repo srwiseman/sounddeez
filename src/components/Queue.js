@@ -13,6 +13,10 @@ export default class Queue extends React.Component {
         );
   }
 
+  componentWillUnmount(){
+    clearInterval(this.timerID)
+  }
+
     loadQueue(){
         console.log("loading queue")
         fetch('http://192.168.0.16:9000/queue')
@@ -29,6 +33,25 @@ export default class Queue extends React.Component {
         //console.log(this.state);
         
     }
+    artistFormatter(cell, row) {
+        return (
+             <div class="text-primary"><p style={{fontSize: "3vw", margin: "0"}}><span>{row.Artist.Name}</span></p>
+             <p style={{fontSize: "3vw", margin: "0"}}><span>{row.Title}</span></p>
+             </div>
+
+            )
+    }
+    coverFormatter(cell, row){
+        const imgStyle = {
+            maxWidth: "100%"
+        }
+        return(
+            <div style={{margin: '-0.75rem'}}>
+                <img style={imgStyle} src={row.Album.Cover} alt="Album Art"/>
+            </div>
+            )
+    }
+
 
     render(){
         const alignIcons = {
@@ -43,7 +66,10 @@ export default class Queue extends React.Component {
                     </div>
                     <div class="card-body">
                         <BootstrapTable data={this.state.queue} striped hover headerStyle={{ display: 'none'}}>
-                            <TableHeaderColumn class="col-hidden" width="60%" isKey dataField='Title'></TableHeaderColumn>
+                            <TableHeaderColumn class="col-hidden" width="20%" dataFormat={this.coverFormatter.bind(this)} isKey dataField='Title'></TableHeaderColumn>
+                            <TableHeaderColumn class="col-hidden" width="80%" dataFormat={this.artistFormatter.bind(this)}></TableHeaderColumn>
+
+
                         </BootstrapTable>
                     </div>
                 </div>
