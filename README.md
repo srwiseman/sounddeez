@@ -28,4 +28,34 @@ Open /sounddeez/goBose/bose.go and change this variable to the IP of your sound 
 const SPEAKER_IP = "http://192.168.0.14:8090/"
 ```
 
+Start the backend Go server:
+
+```go
+go run bose.go
+```
+
+Go to /sounddeez/src/pages/bosemain.js and change this line to the IP of your backend go server. Note: you can run the backand and frontend on the same server, but don't use localhost. Using localhost will cause the end-user's client to look for the server on its localhost.
+
+```javascript
+this.state.controllerIP = "http://192.168.0.16:9000"
+```
+The following is a bit of a hack that I'll be changing soon, but you'll need to open /sounddeez/src/components/Queue.js and set you backend IP here:
+
+```javascript
+fetch('http://192.168.0.16:9000/queue')
+```
+go to /sounddeez/ and start the frontend server:
+
+```bash
+npm start
+```
+
+To see if it's working, go to http://<frontend_ip>:3000/#/bosemain/search
+
+
+
+
+
+
+
 
