@@ -11,7 +11,6 @@ export default class TopBar extends React.Component {
   		}
 
 	imageHandler(){
-		console.log(this.props.art)
   			if (this.props.art != undefined){
   				return (
   					<img style={this.imgStyle} src={this.props.art} alt="art"/>

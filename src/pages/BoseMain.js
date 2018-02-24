@@ -163,7 +163,7 @@ export default class BoseMain extends React.Component {
 
     return(
     	<div>
-    	         <Menu isOpen={this.state.menuOpen} width={ '200px' } styles={ styles }>
+    	         <Menu isOpen={this.state.menuOpen} width={ '300px' } styles={ styles }>
     	          <a onClick={() => this.closeMenu()} id="about" className="menu-item button" href="/#/bosemain/search"><i class="fas fa-search"></i><span>Search</span></a>
     	           <a onClick={() => this.closeMenu()}  id="home" className="menu-item button" href="/#/bosemain/queue" style={{ display: "block"}}><i class="fas fa-list-ul"></i><span>Queue</span></a>
         		   
