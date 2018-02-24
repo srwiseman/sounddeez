@@ -10,7 +10,7 @@ export default class Search extends React.Component {
             margin: "0",
         }
         const medText={
-            fontSize: "15px",
+            fontSize: "10px",
             margin: "0",
         }
         return(<div class ="text-primary"><p class="text-primary" style={medText}><strong>{row.title}</strong></p><p class="text-primary" style={smallText}>{row.artist}</p><p class="text-primary" style={smallText}>{row.album}</p></div>
@@ -29,13 +29,13 @@ export default class Search extends React.Component {
     }
     buttonFormatter(cell, row){
         return (
-             <a href="#/bosemain/search" onClick={() => this.props.playSearchedSong(row.id)}><i class="fas fa-play fa-2x" ></i></a>
+             <div class ="text-primary text-center"><a href="#/bosemain/search" onClick={() => this.props.playSearchedSong(row.id)}><i class="fas fa-play" ></i></a></div>
 
             )
     }
     addButtonFormatter(cell, row){
         return (
-             <a href="#/bosemain/search" onClick={() => this.props.addToQueue(row.id)}><i class="fas fa-plus-circle fa-2x" ></i></a>
+             <div class ="text-primary text-center"><a href="#/bosemain/search" onClick={() => this.props.addToQueue(row.id)}><i class="fas fa-plus-circle" ></i></a></div>
 
             )
     }
@@ -55,7 +55,7 @@ export default class Search extends React.Component {
     					<input class="form-control" value={this.props.searchValue} onChange={this.props.handleSearchChange} />
     					<button class="btn" onClick={this.props.searchSongs}> Search </button>
     					<BootstrapTable data={this.props.results} striped hover headerStyle={{ display: 'none'}} options={{noDataText: 'Search for a Song!'}}>
-    						<TableHeaderColumn dataField='albumImage' dataFormat={this.resultsFormatterImage.bind(this)}></TableHeaderColumn>
+    						<TableHeaderColumn width="20%"dataField='albumImage' dataFormat={this.resultsFormatterImage.bind(this)}></TableHeaderColumn>
     						<TableHeaderColumn width="60%" isKey dataField='full' dataFormat={this.resultsFormatter.bind(this)}></TableHeaderColumn>
     						<TableHeaderColumn dataField="button" dataFormat={this.buttonFormatter.bind(this)}></TableHeaderColumn>
     						<TableHeaderColumn dataField="button" dataFormat={this.addButtonFormatter.bind(this)}></TableHeaderColumn>
