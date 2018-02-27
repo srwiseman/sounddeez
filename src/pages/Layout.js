@@ -11,7 +11,9 @@ export default class Layout extends React.Component {
   	const title = "Welcome Steve!";
     return(
       <div class="container" style={containerStyle}>
-    	<h1>wow</h1>
+    	<div class='duration'>
+                {"37:46"}
+                </div>
       </div>
     );
   }

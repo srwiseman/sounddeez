@@ -21,7 +21,7 @@ import Nav from "./Nav";
 ReactDOM.render(
   <HashRouter>
   <div>
-    <Route path="/layout" component={Example}></Route>
+    <Route path="/layout" component={Layout}></Route>
     <Route path="/archives" component={Archives}></Route>
     <Route path="/Featured" component={Featured}></Route>
     <Route path="/Settings" component={Settings}></Route>

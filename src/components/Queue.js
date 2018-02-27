@@ -76,6 +76,9 @@ export default class Queue extends React.Component {
                     </div>
                 </div>
                 </FadeIn>
+                <div class='duration'>
+                {'_37:46_'}
+                </div>
             </div>   
 
 
