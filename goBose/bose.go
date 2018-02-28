@@ -42,11 +42,12 @@ type Song struct {
 
 var songQueue []Song
 
-
+// This function plays a song when given a songID string
 func playSong (songID string){
 	postBose("select", "<ContentItem source='DEEZER' type='track' location="+songID+" sourceAccount='swiseman@gmail.com' isPresetable='true'></ContentItem>")
 }
 
+// This function takes in a string ID of a song, and places it in the queue
 func queueSong(songID string){
 	fmt.Println("Adding song to queue: " + songID)
 	var songToAdd = getSongDeezer(songID)
@@ -54,6 +55,8 @@ func queueSong(songID string){
 	fmt.Println(songQueue)
 }
 
+
+// When called, this function plays the next song in the queue
 func playNextSongInQueue(){
 	if (len(songQueue) > 0){
 		playSong(strconv.Itoa(songQueue[0].Id))
@@ -147,6 +150,7 @@ func getBose(endURL string) string{
 	return myJson
 }
 
+// Returns the current queue in JSON format
 func getQueueJson() string{
 	var queue = songQueue
     fmt.Println(queue)
