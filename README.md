@@ -47,6 +47,7 @@ fetch('http://192.168.0.16:9000/queue')
 go to /sounddeez/ and start the frontend server:
 
 ```bash
+npm install
 npm start
 ```
 
