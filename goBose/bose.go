@@ -150,19 +150,19 @@ func getBose(endURL string) string {
 // Returns the current queue in JSON format
 func getQueueJSON() string {
 	var queue = songQueue
-	fmt.Println(queue)
 	b, err := json.Marshal(queue)
 	if err != nil {
 		fmt.Println("error:", err)
 	}
+	fmt.Println("The current queue is " + string(b))
 	return string(b)
+
 }
 
 ///main http handler. This detarmines what the web server will show
 func handler(w http.ResponseWriter, r *http.Request) {
 	//split the incoming url on /
 	myURL := strings.Split(r.URL.Path, "/")
-	fmt.Println(myURL)
 
 	//TODO change this to a switch
 	//skip track
@@ -230,8 +230,7 @@ func searchDeezer(artist string) string {
 //Poll for what's playing ever 10 seconds.
 func nowPlayingPoller() {
 	for {
-		time.Sleep(10000 * time.Millisecond)
-		fmt.Println("POLLING")
+		time.Sleep(5000 * time.Millisecond)
 		var nowPlaying = getBose("nowPlaying")
 		//fmt.Println(nowPlaying)
 		if strings.Contains(nowPlaying, "INVALID_SOURCE") {
@@ -244,8 +243,6 @@ func nowPlayingPoller() {
 			fmt.Println("Play a new song!")
 			playNextSongInQueue()
 		}
-		fmt.Println("Current song queue: ")
-		fmt.Println(songQueue)
 
 	}
 }
