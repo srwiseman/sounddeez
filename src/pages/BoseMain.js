@@ -11,19 +11,14 @@ import {
 } from 'react-router-dom';
 
 import { slide as Menu } from 'react-burger-menu'
-import { connect } from "react-redux"
 
-@connect((store) => {
-  return {
-    
-  }
-})
+
 export default class BoseMain extends React.Component {
 	constructor(props) {
     super(props);
     this.state = { menuOpen: false };
     this.state.results = [];
-    this.state.controllerIP = "http://localhost:9000"
+    this.state.controllerIP = "http://192.168.0.16:9000"
 
   }
   closeMenu () {

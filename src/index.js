@@ -7,17 +7,19 @@ import {
   Link
 } from 'react-router-dom';
 import BoseMain from "./pages/BoseMain";
-import { Provider } from "react-redux"
-import store from "./store"
 
 
 
 // ========================================
 
 ReactDOM.render(
-  <Provider store={store}>
-  <BoseMain/>
-  </Provider>
+  <HashRouter>
+  <div>
+    <Route path="/" component={BoseMain}></Route>
+
+
+  </div>
+  </HashRouter>
   ,
   document.getElementById('root')
 );

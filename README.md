@@ -54,11 +54,6 @@ npm start
 To see if it's working, go to http://<frontend_ip>:3000/#/bosemain/search
 
 
-Issues
-=====
-This is formatted to run on mobile right now. You can use the front end on PC, but it looks wonky.
-
-
 
 
 
