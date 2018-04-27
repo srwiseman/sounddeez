@@ -20,7 +20,7 @@ export default class Queue extends React.Component {
 
     loadQueue(){
         console.log("loading queue")
-        fetch('http://192.168.0.16:9000/queue')
+        fetch('http://localhost:9000/queue')
             .then(response => response.json())
             .then(data => {
                 this.setState({queue: data });
